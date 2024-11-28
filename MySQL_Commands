@@ -1,0 +1,86 @@
+CREATE TABLE Account (
+    userId VARCHAR(10) PRIMARY KEY,
+    userName VARCHAR(50) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    fullName VARCHAR(100),
+    email VARCHAR(100),
+    phoneNumber VARCHAR(15),
+    address VARCHAR(255),
+    gender VARCHAR(10),
+    dateOfBirth DATE
+);
+
+CREATE TABLE Admin (
+    userName VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(20) NOT NULL,
+);
+
+CREATE TABLE Product (
+    name VARCHAR(45),
+    description TEXT,
+    price DOUBLE,
+    quantityInStock INT,
+    category VARCHAR(45),
+    brand VARCHAR(45),
+    status VARCHAR(45)
+);
+
+CREATE TABLE Cart (
+    cartId VARCHAR(10) PRIMARY KEY,
+    userId VARCHAR(10),
+    totalPrice DOUBLE DEFAULT 0,
+    FOREIGN KEY (userId) REFERENCES Account(userId)
+);
+
+CREATE TABLE CartItems (
+    cartId VARCHAR(10),
+    productId VARCHAR(10),
+    quantity INT,
+    FOREIGN KEY (cartId) REFERENCES Cart(cartId),
+    FOREIGN KEY (productId) REFERENCES Product(productId),
+    PRIMARY KEY (cartId, productId)
+);
+
+
+(AdminDAO)
+SELECT userName, passWord FROM Admin WHERE userName = ?
+(UserDAO)
+SELECT CAST(SUBSTRING(userId, 3) AS UNSIGNED) AS numericId FROM Account
+"INSERT INTO Account (userId, userName, password, fullName, email, phoneNumber, address, gender, dateOfBirth) " +
+                       "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+SELECT * FROM Account WHERE userName = ?
+UPDATE Account SET
+DELETE FROM Account WHERE userName = ?
+SELECT COUNT(*) FROM Account
+SELECT * FROM Account
+(ProductDAO)
+SELECT CAST(SUBSTRING(productId, 3) AS UNSIGNED) AS numericId FROM Product
+"INSERT INTO Product (productId, name, description, price, quantityInStock, category, brand, status) " +
+                             "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+SELECT * FROM Product WHERE name = ?
+SELECT * FROM Product WHERE productId = ?
+UPDATE Product SET
+DELETE FROM Product WHERE productId = ?
+SELECT COUNT(*) FROM Product
+SELECT * FROM Product
+SELECT * FROM Product WHERE Name LIKE ? OR Description LIKE ?
+SELECT COUNT(*) FROM Product WHERE Name LIKE ? OR Description LIKE ?
+
+(CartDAO)
+SELECT 1 FROM Cart WHERE userId = ?
+INSERT INTO Cart (cartId, userId, totalPrice) VALUES (?, ?, ?)
+SELECT * FROM Cart WHERE userId = ?
+"SELECT SUM(p.price * ci.quantity) AS totalPrice " +
+                     "FROM CartItems ci " +
+                     "JOIN Product p ON ci.productId = p.productId " +
+                     "WHERE ci.cartId = ?";
+UPDATE Cart SET totalPrice = ? WHERE cartId = ?
+INSERT INTO CartItems (cartId, productId, quantity) VALUES (?, ?, ?)
+SELECT 1 FROM CartItems WHERE cartId = ? AND productId = ?
+UPDATE CartItems SET quantity = quantity + ? WHERE cartId = ? AND productId = ?
+SELECT COUNT(*) FROM CartItems ci JOIN Product p ON ci.productId = p.productId WHERE ci.cartId = ?
+"SELECT p.productId, p.name, p.price, ci.quantity, (p.price * ci.quantity) AS total " +
+                       "FROM CartItems ci " +
+                       "JOIN Product p ON ci.productId = p.productId " +
+                       "WHERE ci.cartId = ?";
+
