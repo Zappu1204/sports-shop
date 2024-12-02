@@ -123,7 +123,16 @@ public class ProductDAO {
         }
         return null;
     }
-    
+    //Cập nhật số lượng của sản phẩm
+    public boolean updateQuantity(Product product) throws SQLException {
+        String sql = "UPDATE Product SET quantityInStock = ? WHERE productId = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, product.getQuantityInStock());
+            statement.setString(2, product.getProductId());
+            return statement.executeUpdate() > 0;
+        }
+    }
+
     // Cập nhật thông tin sản phẩm
     public boolean updateProduct(Product product) throws SQLException {
         StringBuilder queryBuilder = new StringBuilder("UPDATE Product SET ");
