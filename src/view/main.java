@@ -41,7 +41,9 @@ public class main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new Menu_Customer().setVisible(true);
+                    Menu_Customer menu_Customer = new Menu_Customer();
+                    menu_Customer.setVisible(true);
+                    menu_Customer.setLocationRelativeTo(null);
                 } catch (SQLException ex) {
                     Logger.getLogger(Menu_Customer.class.getName()).log(Level.SEVERE, null, ex);
                 }
