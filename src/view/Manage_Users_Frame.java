@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.sql.Connection;
 import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
@@ -64,6 +66,8 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
         jcb_gender = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         btn_back = new javax.swing.JButton();
+
+        txt_dateofbirth.setText("mm/dd/yyyy");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -307,6 +311,22 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        txt_dateofbirth.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt_dateofbirth.getText().equals("mm/dd/yyyy")) {
+                    txt_dateofbirth.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt_dateofbirth.getText().isEmpty()) {
+                    txt_dateofbirth.setText("mm/dd/yyyy");
+                }
+            }
+        });
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -420,6 +440,7 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
                 if (userDAO.deleteUser(userName)) {
                     JOptionPane.showMessageDialog(this, "User deleted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     displayData();
+                    resetForm();
                 } else {
                     JOptionPane.showMessageDialog(this, "Failed to delete user!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -504,6 +525,6 @@ private void displayData() throws SQLException {
         txt_email.setText("");
         txt_address.setText("");
         jcb_gender.setSelectedIndex(0);
-        txt_dateofbirth.setText("");
+        txt_dateofbirth.setText("mm/dd/yyyy");
     }
 }
