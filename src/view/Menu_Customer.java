@@ -47,6 +47,7 @@ public class Menu_Customer extends javax.swing.JFrame {
         displayProductData();
         displayCartData();
         this.isLogin = true;   
+        System.out.println(userId+" "+userName+" "+ fullName);
     }
    
     public void openMenu() {
@@ -174,12 +175,12 @@ public class Menu_Customer extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 700));
         jPanel1.setSize(new java.awt.Dimension(1200, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(new AbsoluteLayout());
 
         jplSlideMenu.setBackground(new java.awt.Color(255, 255, 255));
         jplSlideMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jplSlideMenu.setPreferredSize(new java.awt.Dimension(190, 590));
-        jplSlideMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jplSlideMenu.setLayout(new AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -193,7 +194,7 @@ public class Menu_Customer extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/background/store.png")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon("images/background/store.png")); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("American Typewriter", 1, 18)); // NOI18N
         jLabel14.setText("SPORT SHOP ");
@@ -232,7 +233,7 @@ public class Menu_Customer extends javax.swing.JFrame {
                 .addComponent(jlb_hello))
         );
 
-        jplSlideMenu.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 200));
+        jplSlideMenu.add(jPanel2, new AbsoluteConstraints(0, 0, 300, 200));
 
         jLb_home.setBackground(new java.awt.Color(255, 255, 255));
         jLb_home.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -243,7 +244,7 @@ public class Menu_Customer extends javax.swing.JFrame {
                 jLb_homeMouseClicked(evt);
             }
         });
-        jplSlideMenu.add(jLb_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 300, 30));
+        jplSlideMenu.add(jLb_home, new AbsoluteConstraints(0, 230, 300, 30));
 
         jLb_Account.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLb_Account.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -253,7 +254,7 @@ public class Menu_Customer extends javax.swing.JFrame {
                 jLb_AccountMouseClicked(evt);
             }
         });
-        jplSlideMenu.add(jLb_Account, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 300, 30));
+        jplSlideMenu.add(jLb_Account, new AbsoluteConstraints(0, 270, 300, 30));
 
         jLb_cart.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLb_cart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -263,7 +264,7 @@ public class Menu_Customer extends javax.swing.JFrame {
                 jLb_cartMouseClicked(evt);
             }
         });
-        jplSlideMenu.add(jLb_cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 300, 30));
+        jplSlideMenu.add(jLb_cart, new AbsoluteConstraints(0, 310, 300, 30));
 
         jLb_setting.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLb_setting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -273,18 +274,18 @@ public class Menu_Customer extends javax.swing.JFrame {
                 jLb_settingMouseClicked(evt);
             }
         });
-        jplSlideMenu.add(jLb_setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 300, 30));
-        jplSlideMenu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 300, 10));
+        jplSlideMenu.add(jLb_setting, new AbsoluteConstraints(0, 350, 300, 30));
+        jplSlideMenu.add(jSeparator1, new AbsoluteConstraints(0, 530, 300, 10));
 
         jLb_help.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLb_help.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLb_help.setText("Help");
-        jplSlideMenu.add(jLb_help, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 300, 30));
+        jplSlideMenu.add(jLb_help, new AbsoluteConstraints(0, 560, 300, 30));
 
         jLb_introduce.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLb_introduce.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLb_introduce.setText("Introduce");
-        jplSlideMenu.add(jLb_introduce, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 300, 30));
+        jplSlideMenu.add(jLb_introduce, new AbsoluteConstraints(0, 600, 300, 30));
 
         jLb_logout.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLb_logout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -294,13 +295,13 @@ public class Menu_Customer extends javax.swing.JFrame {
                 jLb_logoutMouseClicked(evt);
             }
         });
-        jplSlideMenu.add(jLb_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 300, 30));
+        jplSlideMenu.add(jLb_logout, new AbsoluteConstraints(0, 640, 300, 30));
 
-        jPanel1.add(jplSlideMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 0, 700));
+        jPanel1.add(jplSlideMenu, new AbsoluteConstraints(0, 30, 0, 700));
 
         jpllMenuBar.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblOpenMenu.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/menu_icon_16.png")); // NOI18N
+        lblOpenMenu.setIcon(new javax.swing.ImageIcon("images/icons/menu_icon_16.png")); // NOI18N
         lblOpenMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblOpenMenuMouseClicked(evt);
@@ -324,7 +325,7 @@ public class Menu_Customer extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        jPanel1.add(jpllMenuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1200, 60));
+        jPanel1.add(jpllMenuBar, new AbsoluteConstraints(0, 30, 1200, 60));
 
         jplTitle.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -339,7 +340,7 @@ public class Menu_Customer extends javax.swing.JFrame {
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jplTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 30));
+        jPanel1.add(jplTitle, new AbsoluteConstraints(0, 0, 1200, 30));
 
         jplMain.setBackground(new java.awt.Color(255, 255, 255));
         jplMain.setLayout(new java.awt.CardLayout());
@@ -358,14 +359,14 @@ public class Menu_Customer extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Home");
 
-        jLb_search.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/search_icons_24.png")); // NOI18N
+        jLb_search.setIcon(new javax.swing.ImageIcon("images/icons/search_icons_24.png")); // NOI18N
         jLb_search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLb_searchMouseClicked(evt);
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/background/store.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("images/background/store.png")); // NOI18N
 
         btn_addToCart.setBackground(new java.awt.Color(0, 102, 102));
         btn_addToCart.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -468,7 +469,7 @@ public class Menu_Customer extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(table_showCart);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/cart_icon_100.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("images/icons/cart_icon_100.png")); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 102));
@@ -627,7 +628,7 @@ public class Menu_Customer extends javax.swing.JFrame {
             }
         });
 
-        jLabel56.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/user_icon_128.png")); // NOI18N
+        jLabel56.setIcon(new javax.swing.ImageIcon("images/icons/user_icon_128.png")); // NOI18N
 
         jLabel55.setText("Conf Password");
 
@@ -712,25 +713,25 @@ public class Menu_Customer extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/background/store_200.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("images/background/store_200.png")); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("American Typewriter", 1, 40)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("SPORT SHOP ");
+        jLabel12.setText("SHOP ONLINE");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(298, Short.MAX_VALUE)
+                .addContainerGap(286, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(292, 292, 292))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel12)
-                        .addGap(250, 250, 250))))
+                        .addGap(237, 237, 237))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -763,7 +764,7 @@ public class Menu_Customer extends javax.swing.JFrame {
 
         jplMain.add(cart_setting, "card5");
 
-        jPanel1.add(jplMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 640));
+        jPanel1.add(jplMain, new AbsoluteConstraints(0, 90, 1200, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

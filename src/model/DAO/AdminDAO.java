@@ -20,11 +20,11 @@ public class AdminDAO {
         return null; 
     }
     //Sửa
-    public boolean updatePassword(String username, String Password) throws SQLException {
+    public boolean updatePassword(String username, String newPassword) throws SQLException {
         String sqlUpdate = "UPDATE Admin SET passWord = ? WHERE userName = ?";
         try (Connection connection = MySQLConnector.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sqlUpdate)) {
-            stmt.setString(1, Password); 
+            stmt.setString(1, newPassword); 
             stmt.setString(2, username); 
 
             int rowsAffected = stmt.executeUpdate(); 

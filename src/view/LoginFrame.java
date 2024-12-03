@@ -58,7 +58,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/background/store.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("images/background/store.png")); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));

@@ -150,7 +150,7 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 0, 11)); // NOI18N
         jLabel9.setText("Select from table to delete");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/user_icon_128.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("images/icons/user_icon_128.png")); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 0, 11)); // NOI18N
         jLabel12.setText("Enter Username to update");
@@ -420,7 +420,6 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
                 if (userDAO.deleteUser(userName)) {
                     JOptionPane.showMessageDialog(this, "User deleted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     displayData();
-                    resetForm();
                 } else {
                     JOptionPane.showMessageDialog(this, "Failed to delete user!", "Error", JOptionPane.ERROR_MESSAGE);
                 }

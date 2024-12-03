@@ -133,11 +133,11 @@ public class Manage_Products_Frame extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 0, 11)); // NOI18N
         jLabel9.setText("Select from table to delete");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/product_icon_128.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("images/icons/product_icon_128.png")); // NOI18N
 
         jComboBox_Stuatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "   ", "In stock", "Out of stock", "Suspension of sales" }));
 
-        search.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/search_icons_24.png")); // NOI18N
+        search.setIcon(new javax.swing.ImageIcon("images/icons/search_icons_24.png")); // NOI18N
         search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchMouseClicked(evt);
@@ -449,7 +449,6 @@ public class Manage_Products_Frame extends javax.swing.JFrame {
                 if (productDAO.deleteProduct(productId)) {
                     JOptionPane.showMessageDialog(this, "User deleted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     displayData();
-                    resetForm();
                 } else {
                     JOptionPane.showMessageDialog(this, "Failed to delete product!", "Error", JOptionPane.ERROR_MESSAGE);
                 }

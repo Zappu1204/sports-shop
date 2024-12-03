@@ -41,9 +41,9 @@ public class MenuFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(250, 500));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/user_icon_64.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("images/icons/user_icon_64.png")); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/pruduct_icon_24.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("images/icons/pruduct_icon_24.png")); // NOI18N
 
         btn_manageProduct.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btn_manageProduct.setText("Manage products");
@@ -53,7 +53,7 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/logout_icon_24.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("images/icons/logout_icon_24.png")); // NOI18N
 
         btn_logOut.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btn_logOut.setText("Logout");
@@ -63,7 +63,7 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/user_icon_24.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("images/icons/user_icon_24.png")); // NOI18N
 
         btn_manageUser.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btn_manageUser.setText("Manage users");
@@ -73,7 +73,7 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/icons/settings_icon_24.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("images/icons/settings_icon_24.png")); // NOI18N
 
         btn_setting.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         btn_setting.setText("Settings");
@@ -157,7 +157,7 @@ public class MenuFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setPreferredSize(new java.awt.Dimension(550, 500));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/background/store_200.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("images/background/store_200.png")); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));

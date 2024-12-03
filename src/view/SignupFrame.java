@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.DAO.UserDAO;
@@ -59,6 +61,8 @@ public class SignupFrame extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jcb_gender = new javax.swing.JComboBox<>();
 
+        txt_dateofbirth.setText("mm/dd/yyyy");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
@@ -67,7 +71,7 @@ public class SignupFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("/Users/truongmanhtuan/NetBeansProjects/Store_Management_App/images/background/store.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("images/background/store.png")); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("American Typewriter", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -279,6 +283,22 @@ public class SignupFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        txt_dateofbirth.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txt_dateofbirth.getText().equals("mm/dd/yyyy")) {
+                    txt_dateofbirth.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txt_dateofbirth.getText().isEmpty()) {
+                    txt_dateofbirth.setText("mm/dd/yyyy");
+                }
+            }
+        });
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -390,6 +410,6 @@ public class SignupFrame extends javax.swing.JFrame {
         txt_phonenumber.setText("");
         txt_address.setText("");
         jcb_gender.setSelectedIndex(0);
-        txt_dateofbirth.setText("");
+        txt_dateofbirth.setText("mm/dd/yyyy");
     }
 }

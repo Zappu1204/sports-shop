@@ -22,7 +22,7 @@ public class ProductDAO {
     //Thêm sản phẩm vào kho hàng
     public boolean addProduct(Product product) throws SQLException {
         // Lấy tất cả các productId hiện có từ cơ sở dữ liệu
-        String getAllIdsQuery = "SELECT CAST(SUBSTRING(productId, 3) AS UNSIGNED) AS numericId FROM Product";
+        String getAllIdsQuery = "SELECT CAST(SUBSTRING(productId, 3, 8) AS INT) AS numericId FROM Product";
         List<Integer> existingIds = new ArrayList<>();
         try (PreparedStatement getAllIdsStatement = connection.prepareStatement(getAllIdsQuery);
              ResultSet rs = getAllIdsStatement.executeQuery()) {

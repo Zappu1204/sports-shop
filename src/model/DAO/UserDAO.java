@@ -25,7 +25,7 @@ public class UserDAO {
     //Thêm
     public boolean addUser(User user) throws SQLException {
         // Lấy tất cả các userId hiện có từ cơ sở dữ liệu
-        String getAllIdsQuery = "SELECT CAST(SUBSTRING(userId, 3) AS UNSIGNED) AS numericId FROM Account";
+        String getAllIdsQuery = "SELECT CAST(SUBSTRING(userId, 3, 8) AS INT) AS numericId FROM Account";
         List<Integer> existingIds = new ArrayList<>();
         try (PreparedStatement getAllIdsStatement = connection.prepareStatement(getAllIdsQuery);
              ResultSet rs = getAllIdsStatement.executeQuery()) {

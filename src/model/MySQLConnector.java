@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MySQLConnector {
-//    //local
+    //local
 //    static final String dataBaseURL = "jdbc:mysql://localhost:3306/Shop_online";
 //    static final String username = "root";
 //    static final String password = "0966325274";
