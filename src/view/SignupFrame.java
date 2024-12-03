@@ -71,7 +71,7 @@ public class SignupFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("images/background/store.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon((getClass().getResource("/images/background/store.png")))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("American Typewriter", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));

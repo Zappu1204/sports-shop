@@ -14,8 +14,6 @@ import model.DAO.CartDAO;
 import model.DAO.ProductDAO;
 import model.DAO.UserDAO;
 import model.User;
-import java.sql.SQLException;
-import javax.swing.SpinnerNumberModel;
 import model.Product;
 
 /**
@@ -194,7 +192,7 @@ public class Menu_Customer extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("images/background/store.png")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background/store.png"))); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("American Typewriter", 1, 18)); // NOI18N
         jLabel14.setText("SPORT SHOP ");
@@ -301,7 +299,7 @@ public class Menu_Customer extends javax.swing.JFrame {
 
         jpllMenuBar.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblOpenMenu.setIcon(new javax.swing.ImageIcon("images/icons/menu_icon_16.png")); // NOI18N
+        lblOpenMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/menu_icon_16.png"))); // NOI18N
         lblOpenMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblOpenMenuMouseClicked(evt);
@@ -359,14 +357,14 @@ public class Menu_Customer extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Home");
 
-        jLb_search.setIcon(new javax.swing.ImageIcon("images/icons/search_icons_24.png")); // NOI18N
+        jLb_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search_icons_24.png"))); // NOI18N
         jLb_search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLb_searchMouseClicked(evt);
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("images/background/store.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background/store.png"))); // NOI18N
 
         btn_addToCart.setBackground(new java.awt.Color(0, 102, 102));
         btn_addToCart.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -469,7 +467,7 @@ public class Menu_Customer extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(table_showCart);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("images/icons/cart_icon_100.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cart_icon_100.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 102));
@@ -628,7 +626,7 @@ public class Menu_Customer extends javax.swing.JFrame {
             }
         });
 
-        jLabel56.setIcon(new javax.swing.ImageIcon("images/icons/user_icon_128.png")); // NOI18N
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/user_icon_128.png"))); // NOI18N
 
         jLabel55.setText("Conf Password");
 
@@ -713,7 +711,7 @@ public class Menu_Customer extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("images/background/store_200.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background/store_200.png"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("American Typewriter", 1, 40)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -1003,58 +1001,57 @@ public class Menu_Customer extends javax.swing.JFrame {
             String username = this.userName;
 
             if (username.isEmpty()) {
-                JOptionPane.showMessageDialog(this,"Username cannot be empty!", "Validation Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Username cannot be empty!", "Validation Error", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
             User user = userDAO.readUser(username);
             if (user != null) {
                 // Hiển thị thông tin đơn hàng
-                JOptionPane.showMessageDialog(this, "Order Information:\n" + "Order ID: " + user.getUserId() + "\n" + "Full Name: " + user.getFullName() + "\n" + "Phone: " + user.getPhoneNumber() + "\n" + "Address: " + user.getAddress() + "\n" + "Total Amount: " + String.format("%.2f", total) + "\n" + "Please click confirm!", "Order Details", JOptionPane.INFORMATION_MESSAGE);
-                // Đọc dữ liệu giỏ hàng
-                String[][] cartData = cartDAO.readCartTableData(userId);
-                boolean stockUpdated = true;
-                for (String[] item : cartData) {
-                    String productId = item[0];
-                    int quantityOrdered = Integer.parseInt(item[3]);
-                    // Đọc sản phẩm từ database
-                    Product product = productDAO.readProductId(productId);
-                    if (product != null) {
-                        int quantityInStock = product.getQuantityInStock();
-                        // Kiểm tra tồn kho
-                        if (quantityOrdered > quantityInStock) {JOptionPane.showMessageDialog(this, "Not enough stock for product: " + product.getName(), "Stock Error", JOptionPane.ERROR_MESSAGE); 
-                            stockUpdated = false;
-                            break;
-                        } else {
-                            // Giảm số lượng tồn kho
-                            product.setQuantityInStock(quantityInStock - quantityOrdered);
-                            if (!productDAO.updateQuantity(product)) {
-                                JOptionPane.showMessageDialog(this, "Failed to update stock for product: " + product.getName(), "Update Error", JOptionPane.ERROR_MESSAGE);
+                int confirm = JOptionPane.showConfirmDialog(this, "Order Information:\n" +"Order ID: " + user.getUserId() + "\n" + "Full Name: " + user.getFullName() + "\n" + "Phone: " + user.getPhoneNumber() + "\n" + "Address: " + user.getAddress() + "\n" + "Total Amount: " + String.format("%.2f", total) + "\n\n" + "Do you want to confirm the order?", "Order Details", JOptionPane.YES_NO_OPTION);
+                if (confirm == JOptionPane.YES_OPTION) {
+                    String[][] cartData = cartDAO.readCartTableData(user.getUserId());
+                    boolean stockUpdated = true;
+                    for (String[] item : cartData) {
+                        String productId = item[0];
+                        int quantityOrdered = Integer.parseInt(item[3]);
+                        Product product = productDAO.readProductId(productId);
+                        if (product != null) {
+                            int quantityInStock = product.getQuantityInStock();
+                            // Kiểm tra tồn kho
+                            if (quantityOrdered > quantityInStock) {
+                                JOptionPane.showMessageDialog(this,"Not enough stock for product: " + product.getName(), "Stock Error", JOptionPane.ERROR_MESSAGE);
                                 stockUpdated = false;
                                 break;
+                            } else {
+                                // Giảm số lượng tồn kho
+                                product.setQuantityInStock(quantityInStock - quantityOrdered);
+                                if (!productDAO.updateQuantity(product)) {
+                                    JOptionPane.showMessageDialog(this, "Failed to update stock for product: " + product.getName(), "Update Error", JOptionPane.ERROR_MESSAGE);
+                                    stockUpdated = false;
+                                    break;
+                                }
                             }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Product not found: " + productId, "Error", JOptionPane.ERROR_MESSAGE);
+                            stockUpdated = false;
+                            break;
                         }
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Product not found: " + productId, "Error", JOptionPane.ERROR_MESSAGE);
-                        stockUpdated = false;
-                        break;
                     }
-                }
 
-                if (stockUpdated) {
-                    // Xóa giỏ hàng
-                    if (cartDAO.clearCart(user.getUserId())) {
-                        displayCartData();
-                        JOptionPane.showMessageDialog(this, "Order placed successfully !", "Order Success", JOptionPane.INFORMATION_MESSAGE);
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Failed to clear the cart. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+                    if (stockUpdated) {
+                        // Xóa giỏ hàng
+                        if (cartDAO.clearCart(user.getUserId())) {
+                            displayCartData();
+                            JOptionPane.showMessageDialog(this, "Order placed successfully!", "Order Success", JOptionPane.INFORMATION_MESSAGE);
+                        }
                     }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Order canceled by the user.", "Order Canceled", JOptionPane.INFORMATION_MESSAGE);
                 }
-            } else {
-                JOptionPane.showMessageDialog(this, "User not found. Please check the username.", "User Not Found", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "An error occurred while processing the order: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,"An error occurred while processing the order: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
     }//GEN-LAST:event_btn_orderActionPerformed

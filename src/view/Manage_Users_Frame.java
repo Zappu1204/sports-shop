@@ -6,11 +6,8 @@ package view;
 
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import java.sql.Connection;
 import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.DAO.UserDAO;
 import model.User;
@@ -67,7 +64,7 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         btn_back = new javax.swing.JButton();
 
-        txt_dateofbirth.setText("mm/dd/yyyy");
+        txt_dateofbirth.setText("yyyy-mm-dd");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,7 +151,7 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 0, 11)); // NOI18N
         jLabel9.setText("Select from table to delete");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("images/icons/user_icon_128.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/user_icon_128.png"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 0, 11)); // NOI18N
         jLabel12.setText("Enter Username to update");
@@ -314,7 +311,7 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
         txt_dateofbirth.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                if (txt_dateofbirth.getText().equals("mm/dd/yyyy")) {
+                if (txt_dateofbirth.getText().equals("yyyy-mm-dd")) {
                     txt_dateofbirth.setText("");
                 }
             }
@@ -322,7 +319,7 @@ public class Manage_Users_Frame extends javax.swing.JFrame {
             @Override
             public void focusLost(FocusEvent e) {
                 if (txt_dateofbirth.getText().isEmpty()) {
-                    txt_dateofbirth.setText("mm/dd/yyyy");
+                    txt_dateofbirth.setText("yyyy-mm-dd");
                 }
             }
         });
@@ -525,6 +522,6 @@ private void displayData() throws SQLException {
         txt_email.setText("");
         txt_address.setText("");
         jcb_gender.setSelectedIndex(0);
-        txt_dateofbirth.setText("mm/dd/yyyy");
+        txt_dateofbirth.setText("yyyy-mm-dd");
     }
 }

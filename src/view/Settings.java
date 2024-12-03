@@ -54,7 +54,7 @@ public class Settings extends javax.swing.JFrame {
         jLabel3.setText("New Password");
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel4.setText("Còn Password");
+        jLabel4.setText("Conf Password");
 
         btn_change.setBackground(new java.awt.Color(0, 102, 102));
         btn_change.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -150,6 +150,15 @@ public class Settings extends javax.swing.JFrame {
             }
             if (!adminAccount.getPassword().equals(password)) {
                 JOptionPane.showMessageDialog(this,"Old password is incorrect!","Validation Error",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            // Kiểm tra xác nhận mật khẩu
+            if (!password.equals(passwordNew)) {
+                JOptionPane.showMessageDialog(this,"New password is the same current password!","Validation Error",JOptionPane.ERROR_MESSAGE);
+            }
+            // Kiểm tra mật khẩu: ít nhất 8 ký tự, bao gồm cả chữ và số
+            if (!passwordNew.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")) {
+                JOptionPane.showMessageDialog(this,"Password must be at least 8 characters long and contain both letters and numbers.","Validation Error",JOptionPane.ERROR_MESSAGE);
                 return;
             }
             //So sánh newpass và confpass
