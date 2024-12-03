@@ -48,6 +48,17 @@ $ Open project in IDE (Apache NetBeans, IntelliJ, ...)
 # Run project
 $ Run project
 ```
+#### 📋 Requirements
+- [JDK 21: Java SE Development Kit 21](https://www.oracle.com/java/technologies/downloads/#java21)
+- [Java 8](https://www.java.com/download/ie_manual.jsp)
+- [MySQL](https://dev.mysql.com/downloads/mysql/)
+- [Azure SQL Database](https://azure.microsoft.com/en-us/products/azure-sql/database)
+- JDBC Driver: 
+    1. [mysql-connector-j-9.1.0.jar](https://dev.mysql.com/downloads/connector/j/?os=26) Tại Select Operating System:, chọn Platform Independent. Sau đó, chọn Download. Giải nén và đi tới thư mục ```mysql-connector-java-9.1.0``` và thêm file ```mysql-connector-java-9.1.0.jar``` vào thư viện của project.
+    2. [mssql-jdbc-12.8.1.jre8.jar](https://learn.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16)
+    Sau khi tải về, hãy giải nén và đi tới thu mục ```sqljdbc_12.8.1.0_enu\sqljdbc_12.8\enu\jars```. Thêm file ```mssql-jdbc-12.8.1.jre8.jar``` vào thư viện của project. 
+    
+    Chi tiết với từng ide: [Apache NetBeans](https://netbeans.apache.org/tutorial/main/tutorials/nbm-visual_library3/) và [IntelliJ](https://www.jetbrains.com/help/idea/library.html).
 ## Screenshot
 1. Login page
 ![Login page - Sport Shop](images/screenshots/Login.png)
