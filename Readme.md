@@ -36,18 +36,7 @@ Star ⭐ us if you like it!
 [Biểu đồ UML](https://ptiteduvn-my.sharepoint.com/:i:/g/personal/giapcn_b22at102_stu_ptit_edu_vn/EbJQSVokBL5LggD5FajUkr4BnV2BDRIAFaX4xB7gY6_Ddw?e=AIhuPW)
 ![UML - Sport Shop](images/uml.jpg)
 ## 📦 Installation
-```bash
-# Clone this project
-$ git clone https://github.com/Zappu1204/sports-shop.git
-```
-```bash
-# Open project in IDE
-$ Open project in IDE (Apache NetBeans, IntelliJ, ...)
-```
-```bash
-# Run project
-$ Run project
-```
+Bạn có thể tự xây dựng lại ứng dụng hoặc sử dụng file jar đẫ được build ở ```out/artifacts/sport_shop_jar/sport-shop.jar```.
 #### 📋 Requirements
 - [JDK 21: Java SE Development Kit 21](https://www.oracle.com/java/technologies/downloads/#java21)
 - [Java 8](https://www.java.com/download/ie_manual.jsp)
@@ -59,6 +48,20 @@ $ Run project
     Sau khi tải về, hãy giải nén và đi tới thu mục ```sqljdbc_12.8.1.0_enu\sqljdbc_12.8\enu\jars```. Thêm file ```mssql-jdbc-12.8.1.jre8.jar``` vào thư viện của project. 
     
     Chi tiết với từng ide: [Apache NetBeans](https://netbeans.apache.org/tutorial/main/tutorials/nbm-visual_library3/) và [IntelliJ](https://www.jetbrains.com/help/idea/library.html).
+### 🔨 Build project
+```bash
+git clone https://github.com/Zappu1204/sports-shop.git
+```
+- Open project in IDE (Apache NetBeans, IntelliJ, ...)
+- Run project: run main.java
+### 📦 Run jar file
+Hãy mở terminal và đi tới thư mục chứa file jar. Ví dụ:
+```bash
+cd out/artifacts/sport_shop_jar
+```
+```bash
+java -jar sport-shop.jar
+```
 ## Screenshot
 1. Login page
 ![Login page - Sport Shop](images/screenshots/Login.png)
